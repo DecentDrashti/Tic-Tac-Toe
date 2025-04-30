@@ -1,0 +1,224 @@
+body{
+    background-image: url(https://static.vecteezy.com/system/resources/previews/004/532/221/original/tic-tac-toe-seamless-background-on-dark-blue-illustration-vector.jpg);
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    color: white;
+    text-align: center;
+    padding-top: 50px;
+  }
+  button {
+    font-size: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for button hover */
+  }
+/* h1{
+    justify-content: center;
+    display: flex;
+    font-size: 50px;
+    color: rgb(219, 75, 83);
+} */
+h1 {
+    justify-content: center;
+    display: flex;
+    font-size: 60px; /* Increase the font size for a more vibrant look */
+    color: #fff347; /* Fun and vibrant color */
+    font-family: 'Comic Sans MS', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Playful font */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px; /* More space between the letters */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3), 0 0 25px rgba(255, 165, 0, 0.7); /* Playful, colorful shadow */
+    animation: textAppear 1.5s ease-out, bounce 1s infinite; /* Added bounce animation */
+    margin: 20px 0;
+    background-image: linear-gradient(to right, #fffc5f, #fdf259); /* Gradient effect */
+    -webkit-background-clip: text; /* Ensure the gradient applies only to the text */
+    color: transparent; /* Make text transparent to see the gradient */
+}
+
+/* Add an animation for the fade-in effect */
+@keyframes textAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Bouncing animation for extra fun */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Slight upward movement */
+    }
+}
+
+
+.board {
+    display: grid;
+    background-color: coral;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    width: max-content;
+    margin: 40px auto;
+    transition: all 0.3s ease; /* Add transition for smoother board appearance */
+  }
+  .cell {
+    background-color: rgba(251, 253, 253, 0.733); /* semi-transparent white */;
+    border: 2px solid #000;
+    border-radius: 8px;
+    font-size: 60px;
+    text-align: center;
+    line-height: 100px;
+    cursor: pointer; /*it change the mouse pointer to hand pointer when you hover over cell*/
+    user-select: none; /* prevent text selection */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  button:hover {
+    background-color: coral;
+    color: white;
+}
+
+.cell:hover {
+    background-color: rgb(248, 248, 248);
+}
+
+#sign_choose {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  #sign_choose button {
+    font-size: 20px;
+    margin: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  #sign_choose button i {
+    margin-right: 8px; /* Space between icon and text */
+  }
+
+  /* Style for player X */
+.cell.x {
+    background-color: #ffcccb; /* light red */
+    color: rgb(76, 253, 70);
+    font-weight: bold;
+  }
+  
+  /* Style for player O */
+  .cell.o {
+    background-color: #add8e6; /* light blue */
+    color: blue;
+    font-weight: bold;
+  }
+
+  
+  .cell.win {
+    background-color: gold;
+    color: darkred;
+    font-weight: bold;
+    animation: pulse 1s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  #resultMessage {
+    font-size: 2em;
+    color: #4caf50; 
+    text-shadow: 2px 2px 4px #000;
+    margin-top: 20px;
+    animation: slideIn 1s ease-out;
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* #resultMessage {
+    font-size: 40px;
+    color: #ffeb3b;
+    text-shadow: 2px 2px 8px #000;
+    margin-top: 30px;
+    animation: bounceIn 1s ease;
+  }
+  
+  @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  } */
+
+  #restartBtn {
+    background: linear-gradient(to right, #ff6a00, #ee0979);
+    color: white;
+    font-size: 20px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px #ff6a00;
+  }
+  
+  #restartBtn:hover {
+    box-shadow: 0 0 20px #ee0979;
+    transform: scale(1.1);
+  }
+  
+
+    /* Optional: Add some styles for the winner and draw messages */
+    /* .winner-message {
+        font-size: 24px;
+        color: gold;
+        margin-top: 20px;
+    }
+    .draw-message {
+        font-size: 24px;
+        color: lightblue;
+        margin-top: 20px;
+    } */
+
+    
+    /* .cell:active {
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+    .winner {
+        color: gold;
+        font-weight: bold;
+    }
+    .draw {
+        color: lightblue;
+        font-weight: bold;
+    } */

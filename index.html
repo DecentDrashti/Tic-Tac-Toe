@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="style.css"  rel="stylesheet" >
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+    <!-- Welcome Section -->
+<div id="welcome">
+    <h1>Are you ready for Tic Tac Toe?</h1>
+    <button id="yesBtn">Yes</button>
+    <button id="noBtn">No</button>
+  </div>
+  
+  <!--player name (hidden at first)-->
+  <div id="player_name" style="display: none;">
+    <h1>Players:</h1>
+    <h2>Player 1: <span id="player1Name"></span></h2>
+    <h2>Player 2: <span id="player2Name"></span></h2>
+    <!-- <h1>Enter the players name</h1>
+    player1=prompt("enter name of player1 :")
+    player2=prompt("enter name of player2 :") this will wont work as javascript can not written in html
+    <h1>Player 1: <span id="player1Name"></span></h1>
+    <h1>Player 2: <span id="player2Name"></span></h1> -->
+  </div>
+
+  <!--sign option(hidden at first)-->
+  <div id="sign_choose" style="display: none;">
+    <h1>Which sign would you prefer for player1?</h1>
+    <button id="crossBtn"><i class="bi bi-x-square-fill"></i></button>
+    <button id="circleBtn"><i class="bi bi-emoji-sunglasses-fill"></i></button>
+  </div>
+
+  <!-- Player Info Display (shown during game) -->
+<div id="playerInfo" style="display: none;">
+  <h3>Player 1: <span id="player1Display"></span></h3>
+  <h3>Player 2: <span id="player2Display"></span></h3>
+</div>
+
+  <!-- Game Board (hidden at first) -->
+  <div id="gameBoard" style="display: none;">
+    <h1>Welcome to the Game!</h1>
+    <button id="startGameBtn">Start Game</button>
+    <button id="exitBtn">Exit</button>
+  </div>
+
+  <div class="Game" style="display: none;">
+    <h1>Tic Tac Toe</h1>
+    <div class="board">
+        <div class="cell" data-index="0"></div>
+        <div class="cell" data-index="1"></div>
+        <div class="cell" data-index="2"></div>
+        <div class="cell" data-index="3"></div>
+        <div class="cell" data-index="4"></div>
+        <div class="cell" data-index="5"></div>
+        <div class="cell" data-index="6"></div>
+        <div class="cell" data-index="7"></div>
+        <div class="cell" data-index="8"></div>
+    </div>
+  </div>
+
+    <!-- Result Section (hidden at first) -->
+    <div id="result" style="display: none;">
+        <h1 id="resultMessage"></h1>
+        <button id="restartBtn">Play Again</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+  <script src="script.js"></script> 
+</body>
+</html>
