@@ -11,9 +11,9 @@
 <body>
     <!-- Welcome Section -->
 <div id="welcome">
-    <h1>Are you ready for Tic Tac Toe?</h1>
-    <button id="yesBtn">Yes</button>
-    <button id="noBtn">No</button>
+    <h1>which mode of game you would love to play?</h1>
+    <button id="noBtn">player vs computer</button>
+    <button id="yesBtn">player1 vs player2</button>
   </div>
   
   <!--player name (hidden at first)-->
@@ -30,7 +30,7 @@
 
   <!--sign option(hidden at first)-->
   <div id="sign_choose" style="display: none;">
-    <h1>Which sign would you prefer for player1?</h1>
+    <h1>Choose your sign for player1?</h1>
     <button id="crossBtn"><i class="bi bi-x-square-fill"></i></button>
     <button id="circleBtn"><i class="bi bi-emoji-sunglasses-fill"></i></button>
   </div>
@@ -50,6 +50,7 @@
 
   <div class="Game" style="display: none;">
     <h1>Tic Tac Toe</h1>
+    <!-- <div id="strike" class="strike" style="display: none;"></div> -->
     <div class="board">
         <div class="cell" data-index="0"></div>
         <div class="cell" data-index="1"></div>
@@ -67,6 +68,7 @@
     <div id="result" style="display: none;">
         <h1 id="resultMessage"></h1>
         <button id="restartBtn">Play Again</button>
+        <button id="exitResultBtn">Exit</button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
