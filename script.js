@@ -39,6 +39,7 @@ let name2 = '';
 let player1Sign = '';/// Variable to track the user's sign choice (X or O)
 let player2Sign = '';
 let vsComputer = false;
+//let gameMode = "pvp"; // or "pvc"
 
 // If user clicks Yes(player vs player)
 yesBtn.addEventListener('click', () => {
@@ -148,18 +149,15 @@ cells.forEach(cell => {
       return;
     } else if (gameState.every(cell => cell !== "")) {
       endGame("It's a draw!");
-    } else {
-      currentPlayer = currentPlayer === player1Sign ? player2Sign : player1Sign;
-      if (name2 === "Computer" && currentPlayer === player2Sign) {
-        setTimeout(computerMove, 500); // small delay for realism
-      }
+      return;
     }
 
-    // If player vs computer, let computer make move
-    if (vsComputer && currentPlayer === player1Sign) {
+    if (vsComputer) {
+      // PLAYER just moved, now COMPUTER's turn
       currentPlayer = player2Sign;
-      setTimeout(computerMove, 500); // add delay for realism
+      setTimeout(computerMove, 500);
     } else {
+      // PVP turn switch
       currentPlayer = currentPlayer === player1Sign ? player2Sign : player1Sign;
     }
   });
@@ -268,7 +266,7 @@ function handleWin() {
 function computerMove() {
   if (!gameActive) return;
 
-  currentPlayer = player2Sign;
+  //currentPlayer = player2Sign;
 
   let move = findWinningMove(player2Sign); // Try to win
   if (move === null) {
