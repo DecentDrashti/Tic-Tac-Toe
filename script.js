@@ -416,9 +416,14 @@ restartBtn.addEventListener('click', () => {
   if (player1Display.textContent === `${name1} wins!`) {
     player1Display.textContent = `${name1} (${player1Sign})x${player1win}`;
   }
-  else {
+  else if(player2Display.textContent === `${name2} wins!`){
     player2Display.textContent = `${name2} (${player2Sign})x${player2win}`;
   }
+  else{
+    player1Display.textContent = `${name1} (${player1Sign})`;
+    player2Display.textContent = `${name2} (${player2Sign})`;
+  }
+  
   gameState = ["", "", "", "", "", "", "", "", ""];
   currentPlayer = player1Sign;
   cells.forEach(cell => {
