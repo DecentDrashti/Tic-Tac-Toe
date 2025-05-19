@@ -45,7 +45,15 @@ let vsComputer = false;
 yesBtn.addEventListener('click', () => {
   welcome.style.display = 'none'; // hide the welcome screen
   name1 = prompt("Enter name of Player 1:");
+  if (!name1) {
+        showWelcome();
+        return;
+    }
   name2 = prompt("Enter name of Player 2:");
+    if (!name2) {
+        showWelcome();
+        return;
+    }
 
   player1NameSpan.textContent = name1;
   player2NameSpan.textContent = name2;
@@ -76,7 +84,15 @@ noBtn.addEventListener('click', () => {
   gameBoardIntro.style.display = 'block';
 });
 
-
+function showWelcome() {
+    document.getElementById('welcome').style.display = 'block';
+    document.getElementById('player_name').style.display = 'none';
+    document.getElementById('sign_choose').style.display = 'none';
+    document.getElementById('playerInfo').style.display = 'none';
+    document.getElementById('gameBoard').style.display = 'none';
+    document.querySelector('.Game').style.display = 'none';
+    document.getElementById('result').style.display = 'none';
+}
 
 // after yesbtn 
 
