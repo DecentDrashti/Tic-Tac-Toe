@@ -68,6 +68,10 @@ noBtn.addEventListener('click', () => {
   vsComputer = true; // important!
   welcome.style.display = 'none'; // hide the welcome screen
   name1 = prompt("Enter name of Player:");
+  if (!name1) {
+        showWelcome();
+        return;
+    }
   let sign1 = parseInt(prompt("Sign:(Enter 1 for cross else circle will be default)"));
   if (sign1 == 1) {
     player1Sign = 'X';
