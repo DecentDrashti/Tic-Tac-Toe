@@ -25,7 +25,25 @@ body{
     font-size: 50px;
     color: rgb(219, 75, 83);
 } */
+
 h1 {
+    text-align: center;
+    font-size: 45px;
+    animation: textAppear 1.5s ease-out, bounce 1s infinite;
+}
+
+h1 :first-child,
+h1 :last-child {
+    color: #4bffff;
+    text-shadow: 0 0 6px #00f0ff;
+}
+
+h1 {
+    color: #ff6bff;
+    text-shadow: 0 0 6px #ff6bff;
+}
+
+h2 {
   justify-content: center;
   display: flex;
   font-size: clamp(1.8rem, 6vw, 60px); /* Responsive font size */
@@ -42,7 +60,6 @@ h1 {
   /* background-image: linear-gradient(to right, #b30749, #f8bf45); */
   /* color: transparent; */
 }
-
 
 /* Add an animation for the fade-in effect */
 @keyframes textAppear {
@@ -66,7 +83,33 @@ h1 {
     }
 }
 
+.playerInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 15px auto 4px auto;
+}
 
+/* .player1,
+.player2 {
+    text-align: center;
+    height: 130px;
+    width: auto;
+    border: 2px solid #133c7b;
+    box-shadow: 0px 0px 12px #112c62;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 5px 20px;
+}
+
+.player1 {
+    color: #4bffff;
+}
+
+.player2 {
+    color: #ff6bff;
+} */
 .board {
     display: grid;
     background-color: black;
@@ -142,8 +185,8 @@ h1 {
   }
   
   #resultMessage {
-    font-size: 2em;
-    color: #4caf50; 
+    /* font-size: 2em; */
+    color: #af4c89; 
     text-shadow: 2px 2px 4px #000;
     margin-top: 20px;
     animation: slideIn 1s ease-out;
