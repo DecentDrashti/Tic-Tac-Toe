@@ -11,16 +11,16 @@
 <body>
     <!-- Welcome Section -->
 <div id="welcome">
-    <h1>which mode of game you would love to play?</h1>
+    <h2>Which mode of game you would love to play?</h2>
     <button id="noBtn">player vs computer</button>
     <button id="yesBtn">player1 vs player2</button>
   </div>
   
   <!--player name (hidden at first)-->
   <div id="player_name" style="display: none;">
-    <h1>Players:</h1>
-    <h2>Player 1: <span id="player1Name"></span></h2>
-    <h2>Player 2: <span id="player2Name"></span></h2>
+    <h2>Players:</h2>
+    <h3>Player 1: <span id="player1Name"></span></h3>
+    <h3>Player 2: <span id="player2Name"></span></h3>
     <!-- <h1>Enter the players name</h1>
     player1=prompt("enter name of player1 :")
     player2=prompt("enter name of player2 :") this will wont work as javascript can not written in html
@@ -30,26 +30,29 @@
 
   <!--sign option(hidden at first)-->
   <div id="sign_choose" style="display: none;">
-    <h1>Choose your sign for player1?</h1>
+    <h2>Choose your sign for player1?</h2>
     <button id="crossBtn"><i class="bi bi-x-square-fill"></i></button>
     <button id="circleBtn"><i class="bi bi-emoji-sunglasses-fill"></i></button>
   </div>
 
   <!-- Player Info Display (shown during game) -->
 <div id="playerInfo" style="display: none;">
-  <h3>Player 1: <span id="player1Display"></span></h3>
-  <h3>Player 2: <span id="player2Display"></span></h3>
+     <h3>Player 1: <span id="player1Display"></span></h3>
+    <h3>Player 2: <span id="player2Display"></span></h3>
 </div>
 
   <!-- Game Board (hidden at first) -->
   <div id="gameBoard" style="display: none;">
-    <h1>Welcome to the Game!</h1>
+    <h2>Welcome to the Game!</h2>
     <button id="startGameBtn">Start Game</button>
     <button id="exitBtn">Exit</button>
   </div>
 
   <div class="Game" style="display: none;">
-    <h1>Tic Tac Toe</h1>
+    <h1><span>TIC</span>
+        <span>TAC</span>
+        <span>TOE</span>
+      </h1>
     <!-- <div id="strike" class="strike" style="display: none;"></div> -->
     <div class="board">
         <div class="cell" data-index="0"></div>
@@ -66,7 +69,7 @@
 
     <!-- Result Section (hidden at first) -->
     <div id="result" style="display: none;">
-        <h1 id="resultMessage"></h1>
+        <h2 id="resultMessage"></h2>
         <button id="restartBtn">Play Again</button>
         <button id="exitResultBtn">Exit</button>
     </div>
