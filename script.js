@@ -1,12 +1,3 @@
-// Ask player if they want to start
-// let ans = confirm("Are you ready for Tic Tac Toe?");
-// if (ans == true) {
-//   alert("Let's start!");
-// } else {
-//   alert("Okay, bye!");
-//   // Redirect away or hide the game board
-//   document.querySelector('.board').style.display='none';
-// }
 const yesBtn = document.getElementById('yesBtn');
 const noBtn = document.getElementById('noBtn');
 const welcome = document.getElementById('welcome');
