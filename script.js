@@ -30,6 +30,8 @@ let name2 = '';
 let player1Sign = '';/// Variable to track the user's sign choice (X or O)
 let player2Sign = '';
 let vsComputer = false;
+let waitingForComputer = false;
+
 //let gameMode = "pvp"; // or "pvc"
 
 // If user clicks Yes(player vs player)
@@ -147,8 +149,8 @@ startGameBtn.addEventListener('click', () => {
   });
   gameBoardIntro.style.display = 'none';
   playerName.style.display = 'none';
-  playerInfo.style.display = 'block'; // Show the player info section
   board.style.display = 'block';
+  playerInfo.style.display = 'block'; // Show the player info section
   gameActive = true;
 });
 
@@ -161,7 +163,7 @@ exitBtn.addEventListener('click', () => {
 cells.forEach(cell => {
   cell.addEventListener('click', () => {
     const index = cell.getAttribute('data-index');
-    if (!gameActive || gameState[index] !== "") return;
+    if (!gameActive || gameState[index] !== "" || waitingForComputer) return;
 
     gameState[index] = currentPlayer;
     cell.textContent = currentPlayer;
@@ -178,6 +180,7 @@ cells.forEach(cell => {
     if (vsComputer) {
       // PLAYER just moved, now COMPUTER's turn
       currentPlayer = player2Sign;
+      waitingForComputer = true; // prevent clicks
       setTimeout(computerMove, 500);
     } else {
       // PVP turn switch
@@ -322,6 +325,7 @@ function computerMove() {
     }
 
     currentPlayer = player1Sign;
+    waitingForComputer = false; // allow clicks again
   }
 }
 
@@ -454,6 +458,7 @@ restartBtn.addEventListener('click', () => {
     cell.classList.remove('x', 'o');
   });
   gameActive = true;
+  waitingForComputer = false; // Reset for new game
 });
 
 // Reset game after playing once
