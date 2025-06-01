@@ -44,18 +44,23 @@ let vsComputer = false;
 // If user clicks Yes(player vs player)
 yesBtn.addEventListener('click', () => {
   welcome.style.display = 'none'; // hide the welcome screen
+while (name1 === "" || name1 === null) {
   name1 = prompt("Enter name of Player 1:");
-  if (!name1) {
-    alert("Please enter a valid name for Player 1.");
-        showWelcome();
-        return;
-    }
+  if (name1 === null){ 
+    showWelcome();
+    return; // Exit silently if Cancel is pressed
+  } 
+  if (name1 === "") alert("Please enter a valid name for Player 1.");
+}
+while (name2 === "" || name2 === null) {
   name2 = prompt("Enter name of Player 2:");
-    if (!name2) {
-      alert("Please enter a valid name for Player 2.");
-        showWelcome();
-        return;
-    }
+  if (name2 === null){ 
+    showWelcome();
+    return; // Exit silently if Cancel is pressed
+  } 
+  if (name2 === "") alert("Please enter a valid name for Player 2.");
+}
+
 
   player1NameSpan.textContent = name1;
   player2NameSpan.textContent = name2;
@@ -70,11 +75,15 @@ noBtn.addEventListener('click', () => {
   vsComputer = true; // important!
   welcome.style.display = 'none'; // hide the welcome screen
   name1 = prompt("Enter name of Player:");
-  if (!name1) {
-    alert("Please enter a valid name for Player.");
-        showWelcome();
-        return;
-    }
+  while (name1 === "" || name1 === null) {
+  name1 = prompt("Enter name of Player 1:");
+      if (name1 === null){ 
+            showWelcome();
+            return; // Exit silently if Cancel is pressed
+      } 
+    if (name1 === "") alert("Please enter a valid name for Player 1.");
+}
+
   let sign1 = parseInt(prompt("Sign:(Enter 1 for cross else circle will be default)"));
   if (sign1 == 1) {
     player1Sign = 'X';
