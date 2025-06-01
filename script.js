@@ -46,11 +46,13 @@ yesBtn.addEventListener('click', () => {
   welcome.style.display = 'none'; // hide the welcome screen
   name1 = prompt("Enter name of Player 1:");
   if (!name1) {
+    print("Please enter a valid name for Player 1.");
         showWelcome();
         return;
     }
   name2 = prompt("Enter name of Player 2:");
     if (!name2) {
+      print("Please enter a valid name for Player 2.");
         showWelcome();
         return;
     }
@@ -69,6 +71,7 @@ noBtn.addEventListener('click', () => {
   welcome.style.display = 'none'; // hide the welcome screen
   name1 = prompt("Enter name of Player:");
   if (!name1) {
+    print("Please enter a valid name for Player.");
         showWelcome();
         return;
     }
